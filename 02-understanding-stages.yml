@@ -15,6 +15,13 @@ stages:
     - script: echo $(Build.SourcesDirectory)
     - script: echo $(Build.ArtifactStagingDirectory)
     - script: echo $(System.DefaultWorkingDirectory)
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.tf
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
     # - script: ls -R $(System.DefaultWorkingDirectory)
     # - bash: echo $(PipelineLevelVariable)
   # - job: SecondJob
