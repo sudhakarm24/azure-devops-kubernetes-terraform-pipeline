@@ -16,12 +16,12 @@ stages:
   jobs:
   - job: DevDeployJob
     steps: 
-    - bash: echo Build DevDeployJOB
+    - bash: echo Build DevDeployJob
 - stage: QADeploy
   jobs:
   - job: QADeployJob
     steps: 
-    - bash: echo Build QADeployJOB
+    - bash: echo Build QADeployJob
 - stage: ProdDeploy
   jobs:
   - job: PRODDeployJob
