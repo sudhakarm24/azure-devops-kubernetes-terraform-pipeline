@@ -9,7 +9,7 @@ stages:
   - job: FirstJob
     steps: 
     - script: echo Job1-Hello, world!
-    - bash: echo $(PipelineLevelVariable)
+    # - bash: echo $(PipelineLevelVariable)
   - job: SecondJob
     steps: 
     - script: echo Job1-Hello, world!
@@ -20,7 +20,8 @@ stages:
   jobs:
   - job: DevDeployJob
     steps: 
-    - bash: echo $(environment) deploy job
+    - script: echo Job1-Hello, world!
+    # - bash: echo $(environment) deploy job
 - stage: QADeploy
   variables:
     environment: Dev
@@ -28,7 +29,8 @@ stages:
   jobs:
   - job: QADeployJob
     steps: 
-    - bash: echo $(environment) deploy job
+    - script: echo Job1-Hello, world!
+    # - bash: echo $(environment) deploy job
 - stage: ProdDeploy
   dependsOn: 
   - DevDeploy
